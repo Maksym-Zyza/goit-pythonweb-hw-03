@@ -2,6 +2,7 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 import mimetypes
 import pathlib
 import urllib.parse
+from render_messages import render_messages
 from save_to_storage import save_to_storage
 
 
@@ -13,6 +14,9 @@ class SimpleHttpRequestHandler(BaseHTTPRequestHandler):
             self.send_html_file("index.html")
         elif pr_url.path == "/message.html":
             self.send_html_file("message.html")
+        elif pr_url.path == "/read":
+            render_messages()
+            self.send_html_file("messages.html")
         else:
             if pathlib.Path().joinpath(pr_url.path[1:]).exists():
                 self.send_static()
