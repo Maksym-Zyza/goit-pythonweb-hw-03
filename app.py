@@ -2,6 +2,7 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 import mimetypes
 import pathlib
 import urllib.parse
+from save_to_storage import save_to_storage
 
 
 class SimpleHttpRequestHandler(BaseHTTPRequestHandler):
@@ -19,7 +20,14 @@ class SimpleHttpRequestHandler(BaseHTTPRequestHandler):
                 self.send_html_file("error.html", 404)
 
     def do_POST(self):
-        pass
+      data = self.rfile.read(int(self.headers['Content-Length']))
+      data_parse = urllib.parse.unquote_plus(data.decode())
+      data_dict = {key: value for key, value in [el.split('=') for el in data_parse.split('&')]}
+      save_to_storage(data_dict)
+      self.send_response(302)
+      self.send_header('Location', '/')
+      self.end_headers()
+
 
     def send_html_file(self, filename, status=200):
         self.send_response(status)
