@@ -1,0 +1,10 @@
+services:
+  http-server:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - http_server_data:/app/storage
+    container_name: http-server
+volumes:
+  http_server_data:
