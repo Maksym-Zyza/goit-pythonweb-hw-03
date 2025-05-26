@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% block title %}Messages{% endblock %} {% block
+content %}
+<div class="container py-5">
+  <h1 class="mb-4 text-primary">Saved Messages:</h1>
+  <ul class="list-group">
+    {% for timestamp, message in messages.items() %}
+    <li class="list-group-item">
+      <strong class="text-muted">{{ timestamp }}</strong>:
+      <span class="fw-bold">{{ message.username }}</span> said
+      <em>"{{ message.message }}"</em>
+    </li>
+    {% else %}
+    <li class="list-group-item text-secondary">No messages found.</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

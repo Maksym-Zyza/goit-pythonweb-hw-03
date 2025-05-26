@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Send Message</title>
+    <title>Messages</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -33,14 +33,14 @@
               </li>
               <li class="nav-item">
                 <a
-                  class="nav-link active"
+                  class="nav-link "
                   href="/message.html"
                   >Send message</a
                 >
               </li>
               <li class="nav-item">
                 <a
-                  class="nav-link "
+                  class="nav-link active"
                   href="/read.html"
                   >Read</a
                 >
@@ -52,33 +52,41 @@
     </header>
 
     <main class="container">
-<div class="container mt-3">
-  <main class="form-signin w-50 m-auto">
-    <form action="/message" method="POST">
-      <h1 class="h3 mb-3 fw-normal">Please send me message</h1>
-
-      <div class="row mb-3">
-        <label for="floatingInput">Your nickname</label>
-        <input
-          type="text"
-          class="form-control"
-          id="floatingInput"
-          name="username"
-        />
-      </div>
-
-      <div class="row mb-3 h-100">
-        <label for="floatingTextarea">Message</label>
-        <textarea
-          class="form-control"
-          id="floatingTextarea"
-          name="message"
-        ></textarea>
-      </div>
-
-      <button class="w-100 btn btn-lg btn-primary" type="submit">Send</button>
-    </form>
-  </main>
+<div class="container py-5">
+  <h1 class="mb-4 text-primary">Saved Messages:</h1>
+  <ul class="list-group">
+    
+    <li class="list-group-item">
+      <strong class="text-muted">2025-05-26 20:18:30.480732</strong>:
+      <span class="fw-bold">Jim</span> said
+      <em>"test 11"</em>
+    </li>
+    
+    <li class="list-group-item">
+      <strong class="text-muted">2025-05-26 20:22:01.253865</strong>:
+      <span class="fw-bold">Rob</span> said
+      <em>"test 12"</em>
+    </li>
+    
+    <li class="list-group-item">
+      <strong class="text-muted">2025-05-26 20:47:16.813519</strong>:
+      <span class="fw-bold">Todd</span> said
+      <em>"test test"</em>
+    </li>
+    
+    <li class="list-group-item">
+      <strong class="text-muted">2025-05-26 20:54:02.777996</strong>:
+      <span class="fw-bold">Lee</span> said
+      <em>"test 14"</em>
+    </li>
+    
+    <li class="list-group-item">
+      <strong class="text-muted">2025-05-26 21:13:45.751938</strong>:
+      <span class="fw-bold">Tom</span> said
+      <em>"test test "</em>
+    </li>
+    
+  </ul>
 </div>
 </main>
   </body>
