@@ -12,9 +12,9 @@ class SimpleHttpRequestHandler(BaseHTTPRequestHandler):
         pr_url = urllib.parse.urlparse(self.path)
         if pr_url.path == "/":
             self.send_html_file("index.html")
-        elif pr_url.path == "/message.html":
+        elif pr_url.path == "/message":
             self.send_html_file("message.html")
-        elif pr_url.path == "/read.html":
+        elif pr_url.path == "/read":
             self.send_html_file("read.html")
         else:
             if pathlib.Path().joinpath(pr_url.path[1:]).exists():
